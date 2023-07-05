@@ -7,6 +7,7 @@ name = "천안청수고등학교" #학교이름변수
 current_date = datetime.date.today() #오늘날짜 꺼내오기
 t = str(current_date.year) + current_date.strftime("%m%d") #오늘 날짜 씨발진짜 이ㅏ개새끼 정리시키기
 
+n = int(t)+1
 
 neis = Neispy.sync('126594b98c6348ca93433b5abd47d1fa') #네이스코드
 
@@ -16,6 +17,9 @@ SE = scinfo[0].SD_SCHUL_CODE  # 학교 코드
 
 scmeal = neis.mealServiceDietInfo(AE, SE, MLSV_YMD=t) # 교육청, 학교코드 이용해서 오늘 날짜 급식정보 가져오기
 meal = scmeal[0].DDISH_NM.replace("<br/>", "\n")  #줄바꿈
+
+nimeal = neis.mealServiceDietInfo(AE, SE, MLSV_YMD=n)
+nmeal = scmeal[0].DDISH_NM.replace("<br/>", "\n")  #줄바꿈
 
 
 
@@ -35,6 +39,10 @@ class MyClient(discord.Client): #봇 로그인시키기
         if message.content == '$오늘날짜':
             await message.channel.send(t) # 저거치면 오늘 날짜 사용자가 보낸 채널에 알려주기
 
+        if message.content == '$내일급식': 
+            await message.channel.send(nmeal)#내일급식 치면 내일급식 알려주기
+
+#특정날짜 지목해서 급식 알려주기
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
