@@ -46,4 +46,4 @@ class MyClient(discord.Client): #봇 로그인시키기
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run('MTEyNTcxMTM1MTc1NTU4MzUzOQ.GwqLU3.GKG1-Lby_9eczh_5T3c29yRT6k10bdLORee1Nc')
+client.run('MTEyNTcxMTM1MTc1NTU4MzUzOQ.GyAt-d.32FyfvZNtymFmzY39kClTJGt6Ig6p9zF4DqOUA')
