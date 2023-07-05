@@ -9,7 +9,7 @@ t = str(current_date.year) + current_date.strftime("%m%d") #오늘 날짜 씨발
 
 n = int(t)+1
 
-neis = Neispy.sync('126594b98c6348ca93433b5abd47d1fa') #네이스코드
+neis = Neispy.sync('네이스코드') #네이스코드
 
 scinfo = neis.schoolInfo(SCHUL_NM="천안청수고등학교") #학교이름으로 코드추출
 AE = scinfo[0].ATPT_OFCDC_SC_CODE  # 교육청 코드
@@ -46,4 +46,4 @@ class MyClient(discord.Client): #봇 로그인시키기
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run('MTEyNTcxMTM1MTc1NTU4MzUzOQ.GwqLU3.GKG1-Lby_9eczh_5T3c29yRT6k10bdLORee1Nc')
+client.run('token')
