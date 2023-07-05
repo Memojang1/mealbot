@@ -6,10 +6,15 @@ name = "천안청수고등학교" #학교이름변수
 
 current_date = datetime.date.today() #오늘날짜 꺼내오기
 t = str(current_date.year) + current_date.strftime("%m%d") #오늘 날짜 씨발진짜 이ㅏ개새끼 정리시키기
+<<<<<<< HEAD
+
+n = int(t)+1
+=======
+>>>>>>> 349d66b3a4765742da5ef9cd82f3cd0210e6737d
 
 n = int(t)+1
 
-neis = Neispy.sync('126594b98c6348ca93433b5abd47d1fa') #네이스코드
+neis = Neispy.sync('네이스코드') #네이스코드
 
 scinfo = neis.schoolInfo(SCHUL_NM="천안청수고등학교") #학교이름으로 코드추출
 AE = scinfo[0].ATPT_OFCDC_SC_CODE  # 교육청 코드
@@ -46,4 +51,8 @@ class MyClient(discord.Client): #봇 로그인시키기
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
+<<<<<<< HEAD
 client.run('MTEyNTcxMTM1MTc1NTU4MzUzOQ.GyAt-d.32FyfvZNtymFmzY39kClTJGt6Ig6p9zF4DqOUA')
+=======
+client.run('token')
+>>>>>>> 349d66b3a4765742da5ef9cd82f3cd0210e6737d
