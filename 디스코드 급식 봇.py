@@ -19,7 +19,7 @@ scmeal = neis.mealServiceDietInfo(AE, SE, MLSV_YMD=t) # 교육청, 학교코드 
 meal = scmeal[0].DDISH_NM.replace("<br/>", "\n")  #줄바꿈
 
 nimeal = neis.mealServiceDietInfo(AE, SE, MLSV_YMD=n)
-nmeal = scmeal[0].DDISH_NM.replace("<br/>", "\n")  #줄바꿈
+nmeal = nimeal[0].DDISH_NM.replace("<br/>", "\n")  #줄바꿈
 
 
 
